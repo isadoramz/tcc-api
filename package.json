@@ -1,0 +1,14 @@
+{
+  "name": "tcc-api",
+  "version": "1.0.0",
+  "description": "node api tcc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Isadora Zandonotto",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
