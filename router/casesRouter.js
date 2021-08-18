@@ -1,16 +1,12 @@
 const express = require('express');
+const controllers = require('../controllers');
+
 const router = express.Router();
 
-router.get('/', async function(_, res) {
-    res.send(501)
-});
+router.get('/', controllers.cases.findAll);
 
-router.get('/:id', async function(_, res) {
-    res.send(501)  
-});
+router.get('/:id', controllers.cases.findById);
 
-router.post('/', async function(_, res) {
-    res.send(501)
-});
+router.post('/', controllers.cases.create);
 
 module.exports = router;
