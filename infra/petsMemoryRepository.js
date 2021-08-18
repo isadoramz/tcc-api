@@ -2,25 +2,25 @@ const uuid = require('uuid');
 
 const initialValues = [
     {
-        nome: "",
-        raca: "",
-        idade: 1,
-        especie: "",
-        descricao: "",
+        name: "",
+        breed: "",
+        age: 1,
+        speecies: "",
+        description: "",
     },
     {
-        nome: "",
-        raca: "",
-        idade: 1,
-        especie: "",
-        descricao: "",
+        name: "",
+        breed: "",
+        age: 1,
+        speecies: "",
+        description: "",
     },
     {
-        nome: "",
-        raca: "",
-        idade: 1,
-        especie: "",
-        descricao: "",
+        name: "",
+        breed: "",
+        age: 1,
+        speecies: "",
+        description: "",
     },
 ];
 
@@ -59,11 +59,11 @@ const petsMemoryRepository = {
         const id = uuid.v4();
         const pet = {
             id,
-            nome: petAttributes.nome,
-            raca: petAttributes.raca,
-            idade: petAttributes.idade,
-            especie: petAttributes.especie,
-            descricao: petAttributes.descricao,
+            name: petAttributes.name,
+            breed: petAttributes.breed,
+            age: petAttributes.age,
+            speecies: petAttributes.speecies,
+            description: petAttributes.description,
         }
         this._pets[id] = pet;
         return pet;
