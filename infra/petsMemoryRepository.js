@@ -1,6 +1,7 @@
+const uuid = require('uuid');
+
 const initialValues = [
     {
-        id: 1,
         nome: "",
         raca: "",
         idade: 1,
@@ -8,7 +9,6 @@ const initialValues = [
         descricao: "",
     },
     {
-        id: 2,
         nome: "",
         raca: "",
         idade: 1,
@@ -16,7 +16,6 @@ const initialValues = [
         descricao: "",
     },
     {
-        id: 3,
         nome: "",
         raca: "",
         idade: 1,
@@ -25,11 +24,27 @@ const initialValues = [
     },
 ];
 
-const petMemoryRepository = {
+// {
+//     1: {
+//         id: 1,
+//         nome: "",
+//         raca: "",
+//         idade: 1,
+//         especie: "",
+//         descricao: "",
+//     },
+//     2: {
+//         ...
+//     },
+//     3: {
+//         ...
+//     },
+// }
+
+const petsMemoryRepository = {
     _pets: initialValues.reduce((acc, petValue) => {
-        return {
-            ...acc, [petValue.id]: petValue
-        }
+        const id = uuid.v4();
+        return {...acc, [id]: { ...petValue, id }}
     }, {}),
     
     findById(id) {
@@ -41,10 +56,10 @@ const petMemoryRepository = {
     },
 
     create(petAttributes) {
-        const id = Object.values(this._pets).length + 1;
+        const id = uuid.v4();
         const pet = {
             id,
-            nome: petAttributes.name,
+            nome: petAttributes.nome,
             raca: petAttributes.raca,
             idade: petAttributes.idade,
             especie: petAttributes.especie,
@@ -54,4 +69,6 @@ const petMemoryRepository = {
         return pet;
     }
 }
+
+module.exports = petsMemoryRepository;
 

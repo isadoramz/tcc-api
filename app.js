@@ -2,7 +2,14 @@ const express = require('express');
 const router = require('./router');
 
 const app = express();
+app.use(express.json());
 
-app.use('/', router);
+const apiRouter = express.Router();
+apiRouter.use('/pets', router.petsRouter);
+apiRouter.use('/cases', router.casesRouter);
+app.use('/api', apiRouter);
 
-module.exports = app;
+const port = process.env.PORT || 8080;
+app.listen(port, () => {
+    console.log(`successfully running on port ${port}`);
+});

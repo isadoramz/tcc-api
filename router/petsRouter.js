@@ -3,12 +3,10 @@ const controllers = require('../controllers');
 
 const router = express.Router();
 
-router.get('/', async function(_, res) {
-    res.send(501)
-});
+router.get('/', controllers.pets.findAll);
 
-router.get('/:id', async function(_, res) {
-    res.send(501)
-});
+router.get('/:id', controllers.pets.findById);
 
 router.post('/', controllers.pets.create);
+
+module.exports = router;
