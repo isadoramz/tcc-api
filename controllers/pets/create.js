@@ -1,10 +1,8 @@
 const infra = require('../../infra');
 
-const create = (req, res) => {
-    
+const create = async (req, res) => {
     const petAttributes = req.body;
-    const pet = infra.petsRepository.create(petAttributes);
-
+    const pet = await infra.petsRepository.create(petAttributes);
     res.status(200).send(pet);
 }
 

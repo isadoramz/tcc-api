@@ -1,8 +1,8 @@
 const infra = require('../../infra');
 
-const findById = (req, res) => {
+const findById = async (req, res) => {
     const petId = req.params.id;
-    const pet = infra.petsRepository.findById(petId);
+    const pet = await infra.petsRepository.findById(petId);
     res.status(200).send(pet);
 }
 

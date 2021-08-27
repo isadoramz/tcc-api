@@ -1,4 +1,4 @@
-const petsRepository = require('./petsMemoryRepository');
+const petsRepository = require('./petsMongoRepository');
 const casesRepository = require('./casesMemoryRepository');
 
 module.exports = {

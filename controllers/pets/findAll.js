@@ -1,7 +1,7 @@
 const infra = require('../../infra');
 
-const findAll = (req, res) => {
-    const pets = infra.petsRepository.findAll();
+const findAll = async (req, res) => {
+    const pets = await infra.petsRepository.findAll();
     res.status(200).send(pets);
 }
 

@@ -4,21 +4,30 @@ const initialValues = [
     {
         local: "",
         adress: "",
-        weekDays: "",
+        weekDays: [
+            "",
+            "",
+        ],
         hourAvailability: 1,
         description: "",
     },
     {
         local: "",
         adress: "",
-        weekDays: "",
+        weekDays: [
+            "",
+            "",
+        ],
         hourAvailability: 1,
         description: "",
     },
     {
         local: "",
         adress: "",
-        weekDays: "",
+        weekDays: [
+            "",
+            "",
+        ],
         hourAvailability: 1,
         description: "",
     },
@@ -28,7 +37,10 @@ const initialValues = [
 //     1: {
 //         local: "",
 //         adress: "",
-//         weekDays: "",
+//         weekDays: [
+//             "",
+//             "",
+//         ],
 //         hourAvailability: 1,
 //         description: "",
 //     },
