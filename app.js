@@ -1,14 +1,18 @@
 const express = require('express');
+const cors = require('cors')
 const mongoose = require('mongoose');
 
 const router = require('./router');
 
 mongoose.connect(`mongodb+srv://${username}:${password}@cluster0.srfrz.mongodb.net/${database}?retryWrites=true&w=majority`, {useNewUrlParser: true}, function(err) {
-    if (err) console.log('error');
+    if (err) console.log(err);
 });
 
 const app = express();
 app.use(express.json());
+app.use(cors({
+    origin: '*'
+}));
 
 const apiRouter = express.Router();
 apiRouter.use('/pets', router.petsRouter);

@@ -11,8 +11,9 @@ const mongoose = require('mongoose');
     responsible: {
       email: String,
       phoneNumber:  String,
-      whatsapp: String,Number
-    }
+      whatsapp: String,
+    },
+    img: String
   });
 
   const Model = mongoose.model('pets', petsSchema);
@@ -24,7 +25,8 @@ const mongoose = require('mongoose');
     age:   dbEntity.age,
     speecies: dbEntity.speecies,
     description: dbEntity.description,
-    responsible: dbEntity.responsible
+    responsible: dbEntity.responsible,
+    img: dbEntity.img
   })
   
   const petsRepository = {
