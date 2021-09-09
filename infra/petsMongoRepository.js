@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
   const petsSchema = new Schema({
     name:  String,
     breed: String,
-    age:   Number,
+    age:   String,
     speecies: String,
     description: String,
     responsible: {
